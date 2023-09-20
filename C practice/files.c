@@ -22,13 +22,20 @@ int main(){
     fscanf(fptr, "%c", &ch)
     */
 
-    fptr = fopen ("testfile.txt","w");
+    fptr = fopen ("testfile.txt","a");
     char ch;
-    fscanf(fptr, "%c\n", &ch);
+    fprintf(fptr, "%c", 'A');
     printf("%c", ch);
+
+    printf("%c", fgetc(fptr));
+    printf("%c", fgetc(fptr));
+    fputc('N',fptr);
+    printf("%c", fgetc(fptr));
     fclose(fptr);
 
-
+//fgetc(fptr)
+//fputc('A',fptr)
+//when fgetc returns EOF, the file has ended. compiler has reached the null character 
 
     return 0;
 }
