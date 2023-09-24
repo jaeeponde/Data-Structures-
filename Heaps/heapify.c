@@ -17,7 +17,6 @@ j=1;
 
 
 while(j==1){
-    printf("heapify is working");
 left = (2*i)+1; right = (2*i)+2; largest = i; 
 if (left<n && arr[left]>arr[largest]){
     largest = left; 
@@ -26,11 +25,12 @@ if (right<n && arr[right]>arr[largest]){
     largest = right; 
 }
 if(largest!=i){
-    swap(&arr[left],&arr[largest]);
+    swap(&arr[i],&arr[largest]);
+    i=largest; 
 }
-else{j=0;}
+else {break;}}
 
-}}
+}
 
 int main (){
 
